@@ -1,0 +1,9 @@
+#include <stdio.h>
+struct Student { int id; char name[50]; float gpa; };
+int main(){
+    struct Student s;
+    printf("Enter id name gpa: ");
+    if(scanf("%d %49s %f",&s.id,s.name,&s.gpa)!=3) return 0;
+    printf("ID:%d Name:%s GPA:%.2f\n", s.id, s.name, s.gpa);
+    return 0;
+}
