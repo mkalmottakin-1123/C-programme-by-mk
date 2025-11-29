@@ -1,0 +1,8 @@
+#include <stdio.h>
+typedef struct { double re, im; } Complex;
+Complex add(Complex a, Complex b){ return (Complex){a.re+b.re, a.im+b.im}; }
+int main(){
+    Complex x={1.2,3.4}, y={2.3,1.6}, z=add(x,y);
+    printf("Sum = %.2f + %.2fi\n", z.re, z.im);
+    return 0;
+}
