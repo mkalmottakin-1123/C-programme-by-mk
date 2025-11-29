@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <sys/stat.h>
+int main(){
+    if(chmod("file.txt", S_IRUSR|S_IRGRP|S_IROTH)==0) printf("Now read-only\n"); else perror("chmod");
+    return 0;
+}
