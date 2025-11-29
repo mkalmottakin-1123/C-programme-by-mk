@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(){
+    printf("Compile-time: syntax error example -> missing semicolon\n");
+    printf("Runtime: division by zero, null pointer deref\n");
+    printf("Logical: wrong algorithm producing incorrect output\n");
+    return 0;
+}
