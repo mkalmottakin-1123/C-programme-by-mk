@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    int n, i, t1=0, t2=1, next;
+    int sum=0;
+    printf("Enter n terms: ");
+    scanf("%d", &n);
+    for(i=0;i<n;i++){
+        if(i%2==0) sum+=t1;
+        next=t1+t2;
+        t1=t2;
+        t2=next;
+    }
+    printf("Sum of even index Fibonacci numbers = %d", sum);
+    return 0;
+}
