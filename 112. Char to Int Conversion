@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main() {
+    char c;
+    printf("Enter a digit char: ");
+    if(scanf(" %c",&c)!=1) return 0;
+    if(c>='0' && c<='9') printf("Int: %d\n", c-'0');
+    else printf("Not a digit\n");
+    return 0;
+}
