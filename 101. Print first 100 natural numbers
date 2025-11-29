@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char num[100];
+    int i = 0;
+
+    printf("Enter a number: ");
+    scanf("%s", num);
+
+    // skip leading zeros
+    while (num[i] == '0') {
+        i++;
+    }
+
+    // if all zeros → print 0
+    if (num[i] == '\0') {
+        printf("0");
+    } else {
+        printf("%s", num + i);
+    }
+
+    return 0;
+}
