@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    printf("Enter number of files inside ZIP: ");
+    scanf("%d", &n);
+
+    char files[n][100];
+
+    // Taking file names (as if they are inside ZIP)
+    printf("\nEnter file names:\n");
+    for(i = 0; i < n; i++) {
+        printf("File %d: ", i+1);
+        scanf("%s", files[i]);
+    }
+
+    printf("\n--- Reading and Printing All Files ---\n");
+
+    // Printing each file content (simulated)
+    for(i = 0; i < n; i++) {
+        printf("\nReading: %s\n", files[i]);
+        printf("Content of %s will be printed here...\n", files[i]);
+    }
+
+    return 0;
+}
