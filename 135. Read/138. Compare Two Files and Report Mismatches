@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+    FILE *f1=fopen("a.txt","r"), *f2=fopen("b.txt","r");
+    if(!f1||!f2){ perror("fopen"); return 1; }
+    int c1,c2,pos=0,diff=0;
+    while((c1=fgetc(f1))!=EOF && (c2=fgetc(f2))!=EOF){
+        pos++;
+        if(c1!=c2){ printf("Mismatch at %d: %c vs %c\n", pos, c1, c2); diff++; }
+    }
+    if((c1!=EOF) || (c2!=EOF)) printf("Files differ in length\n");
+    if(!diff) printf("Files identical\n");
+    fclose(f1); fclose(f2);
+    return 0;
+}
