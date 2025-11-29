@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *make_int(int v){
+    int *p = malloc(sizeof(int));
+    if(p) *p = v;
+    return p;
+}
+
+int main(){
+    int *q = make_int(42);
+    if(q) { printf("%d\n", *q); free(q); }
+    return 0;
+}
