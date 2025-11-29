@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+struct Stud{ int id; char name[50]; };
+int main(){
+    struct Stud s = {1, "Alice"};
+    FILE *f = fopen("stud.bin","wb");
+    fwrite(&s, sizeof(s),1,f); fclose(f);
+    struct Stud r;
+    f = fopen("stud.bin","rb"); fread(&r, sizeof(r),1,f); fclose(f);
+    printf("%d %s\n", r.id, r.name);
+    return 0;
+}
