@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main() {
+    int b;
+    printf("Enter 0(false) or 1(true): ");
+    if (scanf("%d",&b)!=1) return 0;
+    printf("%s\n", b ? "true" : "false");
+    return 0;
+}
