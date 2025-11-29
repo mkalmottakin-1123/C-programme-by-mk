@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(){
+    int a,b;
+    printf("Enter a b: ");
+    if(scanf("%d %d",&a,&b)!=2||b==0) { printf("Invalid\n"); return 0; }
+    printf("Quotient=%d Remainder=%d\n", a/b, a%b);
+    return 0;
+}
