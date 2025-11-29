@@ -1,0 +1,13 @@
+#include <stdio.h>
+struct Dist{ int feet; float inch; };
+struct Dist add(struct Dist a, struct Dist b){
+    struct Dist r; r.inch = a.inch + b.inch; r.feet = a.feet + b.feet;
+    if(r.inch >= 12){ r.feet += (int)(r.inch/12); r.inch = fmod(r.inch, 12.0); }
+    return r;
+}
+int main(){
+    struct Dist d1={5,9.5}, d2={3,8.75}, r;
+    r = add(d1,d2);
+    printf("%d feet %.2f inch\n", r.feet, r.inch);
+    return 0;
+}
