@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node{ int v; struct Node *next; } Node;
+
+Node* copy(Node* head){
+    if(!head) return NULL;
+    Node* n = malloc(sizeof(Node));
+    n->v = head->v;
+    n->next = copy(head->next);
+    return n;
+}
+
+void printList(Node* h){ while(h){ printf("%d ", h->v); h=h->next; } printf("\n"); }
+
+int main(){
+    Node *a = malloc(sizeof(Node)), *b = malloc(sizeof(Node)), *c = malloc(sizeof(Node));
+    a->v=1; a->next=b; b->v=2; b->next=c; c->v=3; c->next=NULL;
+    Node *cp = copy(a);
+    printList(cp);
+    // free omitted for brevity
+    return 0;
+}
