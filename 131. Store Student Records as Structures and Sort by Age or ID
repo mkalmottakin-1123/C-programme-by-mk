@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+struct Stud{ int id, age; char name[50]; };
+int main(){
+    struct Stud a[]={ {3,20,"C"}, {1,22,"A"}, {2,21,"B"} };
+    int n=3;
+    for(int i=0;i<n-1;i++) for(int j=i+1;j<n;j++)
+      if(a[i].age > a[j].age){ struct Stud t=a[i]; a[i]=a[j]; a[j]=t; }
+    for(int i=0;i<n;i++) printf("%d %s %d\n", a[i].id, a[i].name, a[i].age);
+    return 0;
+}
