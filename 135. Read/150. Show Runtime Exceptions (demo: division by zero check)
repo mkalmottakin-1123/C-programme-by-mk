@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(){
+    int a=5,b=0;
+    if(b==0) { printf("Runtime error: division by zero avoided\n"); return 1; }
+    printf("%d\n", a/b);
+    return 0;
+}
