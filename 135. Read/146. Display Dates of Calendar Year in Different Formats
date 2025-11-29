@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <time.h>
+int main(){
+    struct tm tm = {0};
+    for(int month=0; month<12; ++month){
+        tm.tm_mday = 1; tm.tm_mon = month; tm.tm_year = 2025-1900;
+        mktime(&tm);
+        char s1[50], s2[50];
+        strftime(s1,sizeof(s1), "%Y-%m-%d", &tm);
+        strftime(s2,sizeof(s2), "%d %B %Y", &tm);
+        printf("%s  -> %s\n", s1, s2);
+    }
+    return 0;
+}
