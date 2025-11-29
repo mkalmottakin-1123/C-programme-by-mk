@@ -1,0 +1,12 @@
+#include <stdio.h>
+void printBinary(unsigned int n) {
+    if(n>1) printBinary(n>>1);
+    putchar((n&1)?'1':'0');
+}
+int main() {
+    unsigned int n;
+    printf("Enter decimal: ");
+    if(scanf("%u",&n)!=1) return 0;
+    printBinary(n); putchar('\n');
+    return 0;
+}
