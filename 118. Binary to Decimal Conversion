@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char s[65];
+    printf("Enter binary: ");
+    if(scanf("%64s", s)!=1) return 0;
+    unsigned long val = 0;
+    for(size_t i=0;i<strlen(s);++i){
+        val = val*2 + (s[i]=='1');
+    }
+    printf("Decimal: %lu\n", val);
+    return 0;
+}
