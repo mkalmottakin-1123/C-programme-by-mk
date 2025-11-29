@@ -1,0 +1,11 @@
+#include <stdio.h>
+struct Stud{ int id; char name[50]; };
+int main(){
+    struct Stud s = {2, "Bob"};
+    FILE *f = fopen("stud.txt","w");
+    fprintf(f, "%d %s\n", s.id, s.name); fclose(f);
+    struct Stud r;
+    f = fopen("stud.txt","r"); fscanf(f, "%d %49s",&r.id, r.name); fclose(f);
+    printf("%d %s\n", r.id, r.name);
+    return 0;
+}
