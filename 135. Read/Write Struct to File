@@ -1,0 +1,10 @@
+135. Read/Write Struct to #include <stdio.h>
+struct st{ int x; };
+int main(){
+    struct st s={10}, t;
+    FILE *f=fopen("a.bin","wb"); fwrite(&s,sizeof(s),1,f); fclose(f);
+    f=fopen("a.bin","rb"); fread(&t,sizeof(t),1,f); fclose(f);
+    printf("%d",t.x);
+    return 0;
+}
+File
